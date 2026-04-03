@@ -7,12 +7,5 @@
         'even' => false
     ]);?>
 <?= $this->endSection();?>
-<?php $this->section('styles');?>
-<style type="text/css">
-.bg-primary {
-    background-color: #000000 !important;
-}
-</style>
-<?php $this->endSection();?>
 <?php
 $this->setVar('title', 'Test title');
