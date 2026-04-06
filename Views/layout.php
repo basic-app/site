@@ -8,8 +8,6 @@ SiteEvents::registerAssets($theme->head, $theme->beginBody, $theme->endBody);
 
 $params = SiteEvents::mainLayout([
     'mainMenu' => $this->data['mainMenu'] ?? [],
-    'actionMenu' => $this->data['actionMenu'] ?? [],
-    'breadcrumbs' => $this->data['breadcrumbs'] ?? [],
     'content' => $content,
     'title' => $this->data['title'] ?? null
 ]);
