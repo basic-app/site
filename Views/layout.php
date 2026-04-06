@@ -8,7 +8,6 @@ SiteEvents::registerAssets($theme->head, $theme->beginBody, $theme->endBody);
 
 $params = SiteEvents::mainLayout([
     'mainMenu' => $this->data['mainMenu'] ?? [],
-    'enableCard' => $this->data['enableCard'] ?? true,
     'cardTitle' => $this->data['cardTitle'] ?? null,
     'actionMenu' => $this->data['actionMenu'] ?? [],
     'breadcrumbs' => $this->data['breadcrumbs'] ?? [],
