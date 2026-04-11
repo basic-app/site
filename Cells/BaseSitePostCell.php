@@ -9,4 +9,9 @@ use CodeIgniter\View\Cells\Cell;
 
 abstract class BaseSitePostCell extends Cell
 {
+    public $title;
+    public $description;
+    public $authorName;
+    public $authorUrl;
+    public $createdDate;
 }
