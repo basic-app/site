@@ -1,0 +1,14 @@
+<?php
+/**
+ * @author Basic App Dev Team
+ * @license MIT
+ */
+namespace BasicApp\Site\Cells;
+
+use CodeIgniter\View\Cells\Cell;
+
+abstract class BaseSiteFooterCell extends Cell
+{
+    public $copyright = 'Copyright &copy; Your Website';
+    public $menu = [];
+}
