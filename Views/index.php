@@ -1,11 +1,17 @@
-<?= $this->extend('BasicApp\Site\layouts/app');?>
-<?= $this->section('content');?>
-    <?= view_cell('SiteCell::page', [
-        'id' => 'index',
-        'title' => 'Index title',
-        'content' => '<p>Index content.</p>',
-        'even' => false
-    ]);?>
-<?= $this->endSection();?>
 <?php
+
 $this->setVar('title', 'Test title');
+$this->setVar('keywords', 'Test keywords');
+$this->setVar('description', 'Test description');
+$this->setVar('navMenuActiveItem', 'index');
+
+$this->extend('BasicApp\Site\layouts/app');
+
+$this->section('content');
+
+echo view_cell('Site::card', [
+    'title' => 'Index title',
+    'body' => '<p>Index content.</p>'
+]);
+
+$this->endSection();

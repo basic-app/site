@@ -1,5 +1,3 @@
 <?php
 
-$theme = service('theme');
-
-echo $theme->pager(['pager' => $pager]);
+echo view_cell('Site::pager', ['pager' => $pager]);
