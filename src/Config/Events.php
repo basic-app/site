@@ -28,14 +28,11 @@ Events::on('pre_system', static function() : void {
 });
 
 Events::on(AdminMenu::class, static function(AdminMenu $event) : void {
-
-    //$event->prependGroup();
-
     $event->prependItems(lang('Admin.Settings'), [
         'site-settings' => [
             'label' => lang('Admin.Site Settings'),
             'url' => site_url('admin/site-settings'),
-            'icon' => ['icon' => 'fa-regular fa-house']
+            'icon' => 'fa-regular fa-house'
         ]
     ]);
 });
