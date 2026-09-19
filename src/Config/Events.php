@@ -28,7 +28,7 @@ Events::on('pre_system', static function() : void {
 });
 
 Events::on(AdminMenu::class, static function(AdminMenu $event) : void {
-    $event->prependItems(lang('Admin.Settings'), [
+    $event->prependItems('Settings', [
         'site-settings' => [
             'label' => lang('Admin.Site Settings'),
             'url' => site_url('admin/site-settings'),
