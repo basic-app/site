@@ -3,7 +3,10 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "BasicApp\\Site\\" : "src/"
+            "BasicApp\\Site\\": "src"
         }
+    },
+    "require": {
+        "basic-app/settings": "*"
     }
 }

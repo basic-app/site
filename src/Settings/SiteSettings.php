@@ -5,7 +5,7 @@
  */
 namespace BasicApp\Site\Settings;
 
-use BasicApp\Core\Settings;
+use BasicApp\Settings\Settings;
 
 class SiteSettings extends Settings
 {
