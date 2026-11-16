@@ -1,9 +1,11 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @author Basic App Dev Team
  * @license MIT
  */
+
 namespace BasicApp\Site\Settings;
 
 use BasicApp\Settings\Settings;
@@ -20,7 +22,7 @@ class SiteSettings extends Settings
 
     public $copyright;
 
-    public function rules() : array
+    public function rules(): array
     {
         return [
             'name' => [

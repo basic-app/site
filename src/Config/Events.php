@@ -1,9 +1,11 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @author Basic App Dev Team
  * @license MIT
  */
+
 namespace BasicApp\Site;
 
 use CodeIgniter\Events\Events;
@@ -25,10 +27,10 @@ use BasicApp\Admin\Events\AdminMenu;
  * Example:
  *      Events::on('create', [$myInstance, 'myMethod']);
  */
-Events::on('pre_system', static function() : void {
+Events::on('pre_system', static function (): void {
 });
 
-Events::on(AdminMenu::class, static function(AdminMenu $event) : void {
+Events::on(AdminMenu::class, static function (AdminMenu $event): void {
     $event->prependItems('Settings', [
         'site-settings' => [
             'label' => lang('Admin.Site Settings'),

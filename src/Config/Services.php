@@ -1,9 +1,11 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @author Basic App Dev Team
  * @license MIT
  */
+
 namespace BasicApp\Site\Config;
 
 use CodeIgniter\Config\BaseService;
@@ -36,11 +38,10 @@ class Services extends BaseService
      */
     public static function siteSettings($getShared = true)
     {
-        if ($getShared) 
-        {
+        if ($getShared) {
             return static::getSharedInstance(__FUNCTION__);
         }
 
-        return new SiteSettings;
+        return new SiteSettings();
     }
 }

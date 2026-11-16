@@ -1,9 +1,11 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @author Basic App Dev Team
  * @license MIT
  */
+
 namespace BasicApp\Site\Controllers\Admin;
 
 use App\Controllers\Admin\BaseController;
@@ -18,22 +20,18 @@ class SiteSettingsController extends BaseController
 
     public function index()
     {
-        $data = new SiteSettings;
+        $data = new SiteSettings();
 
-        if ($this->request->is('post'))
-        {
-            if ($this->validateData($this->request->getPost(), $data->rules()))
-            {
+        if ($this->request->is('post')) {
+            if ($this->validateData($this->request->getPost(), $data->rules())) {
                 $data->fill($this->validator->getValidated());
 
                 $data->save();
 
                 $this->session->setFlashdata('success', lang('Admin.Data saved successfully.'));
-                
+
                 return redirect()->to('admin/site-settings');
-            }
-            else
-            {
+            } else {
                 $errors = $this->validator->getErrors();
             }
         }
