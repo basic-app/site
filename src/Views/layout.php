@@ -4,8 +4,6 @@ declare(strict_types=1);
  * @author Basic App Dev Team
  * @license MIT
  * 
- * @var ?array $scripts
- * @var ?array $styles
  */
 use BasicApp\Site\Events\SiteFooterMenu;
 use BasicApp\Site\Events\SiteMenu;
