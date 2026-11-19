@@ -3,6 +3,9 @@ declare(strict_types=1);
 /**
  * @author Basic App Dev Team
  * @license MIT
+ * 
+ * @var ?array $scripts
+ * @var ?array $styles
  */
 use BasicApp\Site\Events\SiteFooterMenu;
 use BasicApp\Site\Events\SiteMenu;
@@ -11,25 +14,17 @@ use BasicApp\Site\Events\SiteStyles;
 
 helper(['render_view', 'styles', 'scripts']);
 
+/** @var SiteMenu $siteMenu */
 $siteMenu = SiteMenu::trigger();
 
+/** @var SiteFooterMenu $siteFooterMenu */
 $siteFooterMenu = SiteFooterMenu::trigger();
 
-$siteStyles = SiteStyles::trigger([
-    'styles' => array_merge(
-        ['<!--render_styles()-->'],
-        [render_view('BasicApp\Site\styles')],
-        $styles ?? []
-    )
-]);
+/** @var SiteStyles $siteStyles */
+$siteStyles = SiteStyles::trigger();
 
-$siteScripts = SiteScripts::trigger([
-    'scripts' => array_merge(
-        ['<!--render_scripts()-->'],
-        [render_view('BasicApp\Site\scripts')],
-        $scripts ?? []
-    )
-]);
+/** @var SiteScripts $siteScripts */
+$siteScripts = SiteScripts::trigger();
 
 $siteSettings = service('siteSettings');
 
@@ -42,11 +37,14 @@ $content = view_cell('SiteLayout', [
     'name' => $siteSettings->name,
     'menu' => $siteMenu->items,
     'activeMenu' => $activeMenu ?? null,
-    'copyright' => $siteSettings->copyright,
     'footerMenu' => $siteFooterMenu->items,
     'copyright' => strtr($siteSettings->copyright, ['{Y}' => date('Y')]),
-    'scripts' => implode("\n", $siteScripts->scripts),
-    'styles' => implode("\n", $siteStyles->styles)
+    'styles' => '<!--render_styles()-->' // assets
+        . implode("\n", $siteStyles->getItems()) // globals
+        . $this->renderSection('pageStyles'), // page
+    'scripts' => '<!--render_scripts()-->' // assets
+        . implode("\n", $siteScripts->getItems()) // global
+        . $this->renderSection('pageScripts') // page
 ]);
 
 $content = str_replace('<!--render_styles()-->', render_styles(), $content);

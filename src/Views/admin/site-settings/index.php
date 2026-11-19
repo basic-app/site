@@ -1,9 +1,15 @@
 <?php
+
 declare(strict_types=1);
+
 /**
  * @author Basic App Dev Team
  * @license MIT
+ * 
+ * @var BasicApp\Site\Settings\SiteSettings $data
+ * @var array $errors
  */
+
 $this->setVar('title', lang('Admin.Settings'));
 $this->setVar('activeMenu', 'site-settings');
 $this->setVar('description', lang('Admin.Site Settings'));

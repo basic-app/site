@@ -8,9 +8,8 @@ declare(strict_types=1);
 
 namespace BasicApp\Site\Events;
 
-use BasicApp\Event\Event;
+use BasicApp\Event\EventWithItems;
 
-class SiteScripts extends Event
+class SiteScripts extends EventWithItems
 {
-    public array $scripts = [];
 }

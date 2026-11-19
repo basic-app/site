@@ -8,25 +8,8 @@ declare(strict_types=1);
 
 namespace BasicApp\Site\Events;
 
-use BasicApp\Event\Event;
+use BasicApp\Event\EventWithItems;
 
-class SiteFooterMenu extends Event
+class SiteFooterMenu extends EventWithItems
 {
-    public array $items = [];
-
-    public function addItems(array $items)
-    {
-        $this->items = array_merge(
-            $this->items ?? [],
-            $items
-        );
-    }
-
-    public function prependItems(array $items)
-    {
-        $this->items = array_merge(
-            $items,
-            $this->items ?? []
-        );
-    }
 }
