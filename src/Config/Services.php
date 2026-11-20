@@ -26,17 +26,7 @@ use BasicApp\Site\Settings\SiteSettings;
  */
 class Services extends BaseService
 {
-    /*
-     * public static function example($getShared = true)
-     * {
-     *     if ($getShared) {
-     *         return static::getSharedInstance('example');
-     *     }
-     *
-     *     return new \CodeIgniter\Example();
-     * }
-     */
-    public static function siteSettings($getShared = true)
+    public static function siteSettings(bool $getShared = true): SiteSettings
     {
         if ($getShared) {
             return static::getSharedInstance(__FUNCTION__);

@@ -9,6 +9,7 @@ use BasicApp\Site\Events\SiteFooterMenu;
 use BasicApp\Site\Events\SiteMenu;
 use BasicApp\Site\Events\SiteScripts;
 use BasicApp\Site\Events\SiteStyles;
+use BasicApp\Site\Settings\SiteSettings;
 
 helper(['render_view', 'styles', 'scripts']);
 
@@ -24,6 +25,7 @@ $siteStyles = SiteStyles::trigger();
 /** @var SiteScripts $siteScripts */
 $siteScripts = SiteScripts::trigger();
 
+/** @var SiteSettings $siteSettings */
 $siteSettings = service('siteSettings');
 
 $content = view_cell('SiteLayout', [

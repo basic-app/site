@@ -8,4 +8,5 @@ declare(strict_types=1);
 use CodeIgniter\Router\RouteCollection;
 
 /** @var RouteCollection $routes */
+
 $routes->match(['GET', 'POST'], 'admin/site-settings', '\BasicApp\Site\Controllers\Admin\SiteSettingsController::index');
